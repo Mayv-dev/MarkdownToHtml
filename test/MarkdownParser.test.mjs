@@ -1,0 +1,11 @@
+import { expect, test } from "vitest";
+import { token } from "../src/data/Token.mjs";
+import { TokenType } from "../src/data/TokenType.mjs";
+import { parseMarkdown } from "../src/MarkdownParser.mjs";
+
+test("Create a token with type:h1", () => {
+  const str = "#";
+  const exp = [token(TokenType.h1, "")];
+
+  expect(parseMarkdown(str)).toEqual(exp);
+});
