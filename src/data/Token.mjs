@@ -13,6 +13,6 @@ import { TokenType } from "./TokenType.mjs";
  * @param {string} content
  * @returns {Token}
  */
-export const token = (type, content) => {
+export const newToken = (type, content) => {
   return { type: type, content: content };
 };
