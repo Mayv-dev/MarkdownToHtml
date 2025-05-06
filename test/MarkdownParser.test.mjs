@@ -23,3 +23,10 @@ test("Create a token with type:h1 and content.", () => {
 
   expect(parseMarkdown(str)).toEqual(exp);
 });
+
+test("Create a token with type:h1 and content. Ignores trims whitespace.", () => {
+  const str = "#    header1   ";
+  const exp = [newToken(TokenType.h1, "header1")];
+
+  expect(parseMarkdown(str)).toEqual(exp);
+});
