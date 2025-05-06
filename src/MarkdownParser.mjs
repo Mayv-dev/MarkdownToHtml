@@ -21,6 +21,9 @@ export const parseMarkdown = (inputStr) => {
  * @returns {Token}
  */
 const findBlockType = (block) => {
+  if (block.startsWith("#") && block.length > 2) {
+    return newToken(TokenType.h1, block.slice(2));
+  }
   if (block.startsWith("#") && block.length === 2) {
     return newToken(TokenType.h1, "");
   }
