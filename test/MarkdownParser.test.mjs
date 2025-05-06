@@ -9,3 +9,10 @@ test("Create a token with type:h1", () => {
 
   expect(parseMarkdown(str)).toEqual(exp);
 });
+
+test("Create a token with type:h1. Ignores first space.", () => {
+  const str = "# ";
+  const exp = [newToken(TokenType.h1, "")];
+
+  expect(parseMarkdown(str)).toEqual(exp);
+});
